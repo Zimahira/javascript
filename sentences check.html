@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        color: red;
+        font-size: 40px;
+    }
+</style>
+<body>
+    
+</body>
+ <script>
+ let Zima = prompt("write a sentence");
+  let sen=Zima.length;
+  document.write("The length of your input is" + sen);
+  document.write( " <br> This string in lowercase is" + Zima.toLowerCase());
+   document.write(  " <br> This string in uppercase is" + Zima.toUpperCase());
+   let yog=Zima.includes("javascript");
+   if(yog){
+    document.write(" <br>Your input contains'Javascript'.");
+   } else{
+    document.write(" <br>Your input does not contain'Javascript'.");
+        }
+   let hira=Zima.indexOf("s");
+   if(hira!==1){
+    document.write(" <br>The letter 'A' is at index" + hira)
+   } else{
+    document.write(" <br>Your input does not contain'A'.");
+
+   }
+  
+
+ </script>
+</html>

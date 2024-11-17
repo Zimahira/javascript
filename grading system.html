@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    #kai{
+        width: 400px;
+        height: fit-content;
+        padding: 4%;
+        background-color: purple;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+    h1{
+        color: blue;
+       font-weight: 700;
+       font-size: 21px;
+ }
+    #hmm{
+        color: black;
+        outline: none;
+        padding: 2%;
+            }
+    button{
+        background-color: black;
+        color: white;
+        padding: 2%;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    #kj{
+        margin-top: 2%;
+        border: 1px solid black;
+        width: 80%;
+        padding: 6%;
+        color: black;
+        font-size: 21px;
+        font-weight: 400;
+        height: 10px;
+
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <div id="kai">
+        <h1>Grading System</h1>
+        <input id="hmm" type="text"><button onclick="checkGrade()">check</button>
+            <div id="kj"></div>
+       </div>
+  </center>
+</body>
+<script>
+     function checkGrade(){
+        let input= document.getElementById("hmm").value;
+        let grade="";
+        if (input >100){
+            grade= "Invalid";
+        }
+        else if(input >= 70) {
+            grade ="A";
+        } else if(input >= 60){
+            grade = "B";
+        } else if(input >= 50){
+            grade = "C";
+        } else if (input >= 40){
+            grade = "D";
+        } else if (input >= 30){
+            grade ="E";
+        } else{
+            grade="F";
+        }
+
+        let result= document.getElementById("kj");
+        result.innerHTML="Your grade is:" +grade;
+     }     
+      
+</script> 
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div>
+        <h1>Shopping list</h1>
+        <input id="ok" type="text" placeholder="Shopping item"> <br>
+        <input id="jo" type="text" placeholder="price"> <br>
+        <input id="ds" type="text" placeholder="quantity" id=""> <br>
+        <button onclick="multiply()">Submit</button> <br>
+        <div id="awks"></div>
+        <ul id="itemlist"></ul>
+    </div>
+</body>
+<script>
+     let total =0;
+    let zima = 0;
+    let input1 =document.getElementById("ok");
+    let input2 =document.getElementById("jo");
+    let  input3 =document.getElementById("ds");
+    let thing =document.getElementById("ok");
+    
+ 
+const multiply =() =>{
+  
+
+    let awks =document.getElementById("awks") 
+    total = input2.value * input3.value; 
+    zima+= total
+    awks.innerHTML = `Total: ${zima}`
+    
+    let listitem=document.createElement("li");
+    thing=thing.value;
+    input2=input2.value;
+    input3=input3.value;
+       listitem.textContent= " item: " +thing + "  price: " + input2  + "  quantity: " +input3 + "  total: " +total + "   "   ;
+         let itemlist=document.getElementById("itemlist");
+     itemlist.appendChild(listitem); 
+     let delebutt=document.createElement("button");
+    delebutt.innerHTML="Delete";
+    delebutt.addEventListener("click", function(){
+        listitem.remove();
+    });
+    listitem.appendChild(delebutt);
+//     let editbutt= document.createElement("button");
+// editbutt.innerHTML="Edit";
+// editbutt.addEventListener("click", function(){
+// let newinput1=prompt("Enter the new item");
+// let newinput2= prompt("Enter new price");
+// let newinput3=prompt("Enter the new quanity")
+// listitem.querySelector(thing).textContent=newinput1;
+// listitem.querySelector(input2).textContent=newinput2;
+// listitem.querySelector(input3).textContent=newinput3;
+// });
+   
+
+
+   
+
+            }
+
+
+
+</script>
+</html>

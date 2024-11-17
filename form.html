@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        white-space: nowrap;
+    }
+    input{
+        padding: 5px;
+        border: 2px black solid;
+        margin-top: 2%;
+        
+
+    }
+</style>
+<body>
+    <h2>SIGN UP</h2>
+    <input type="text" placeholder="Firstname" id="Firstname"> <br>
+    <input type="text" placeholder="lastname" id="lastname"> <br>
+    <input type="email" placeholder="Email" id="Email"> <br>
+    <input type="password" placeholder="password" id="password"> <br>
+    <input type="number" placeholder="phonenumber" id="phonenumber"> <br>
+    <button onclick="submit()">SIGN UP</button> <br>
+       
+<script>
+    let thingsArr = [];
+    let inpOne= document.getElementById("Firstname");
+    let inpTwo= document.getElementById("lastname");
+    let  inpThree = document.getElementById("Email");
+    let  inpFour = document.getElementById("password");
+    let  inpFive = document.getElementById("phonenumber");
+    
+  if (localStorage.getItem("regarray") === null) {
+       localStorage.setItem("regarray", "[]") 
+    }
+
+ const submit = () => {
+    let firstname =inpOne.value;
+    let Lastname =inpTwo.value;
+    let email =inpThree.value;
+    let password =inpFour.value;
+    let no =inpFive.value;
+ 
+ let thingsobj ={
+         firstname,
+         Lastname,
+         email,
+         password,
+         no
+ }
+let strarrTwo= localStorage.getItem("regarray");
+let array= JSON.parse(strarrTwo);
+array.push(thingsobj);
+console.log(array);
+
+localStorage.setItem('regarray', JSON.stringify(array));
+ }
+
+   
+</script>
+</body>
+</html>

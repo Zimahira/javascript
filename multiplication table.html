@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <input type="" id="yo">
+    <input type="text" id="lo">
+    <button onclick="myfunction()">ok</button>
+</head>
+<body>
+    
+</body>
+<script>
+    function myfunction(char){
+        let value1 =document.getElementById('yo').value;
+        let value2 =document.getElementById('lo').value;
+      for(let i= 0; i<= value2; i++){
+        let result =value1 * i;
+        let expression = document.write(value1 + ' * ' + i + ' = ' + result + '' + '<br>' )
+      }
+    }
+</script>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+                    }
+       #gen{
+         background-color: aqua;
+         width: 100%;
+         height: 100vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+       }
+       #main{
+        background-color: palevioletred;
+        padding: 20px;
+        border-radius: 10px;
+       }
+       #sas{
+          width: 130px;
+       }
+       button, input{
+           border: 1px solid white;
+           outline: 0;
+           width: 65px;
+           height: 68px;
+           margin-top: 2%;
+           font-size: 24px;
+           background-color: transparent;
+           border-radius: 10px;
+           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+           color: black;
+           font-weight: bolder;
+           cursor: pointer;
+       }
+       #ods{
+           width: 97%;
+       }
+    </style>
+</head>
+<body>
+   <div id="gen">
+     <div>
+    <input id="ods" type="text" name="display">
+</div>
+<div id="secondnumber"></div>
+    <div id ="main">
+        <div>
+            <button onclick="theOn()">on</button>
+             <button onclick="theOff()">off</button>
+        </div>
+        <div>
+            <button  type="button" onclick="clearAll()"> Ac</button>
+            <button type="button" onclick="clearNumber()"> DE</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button type="button" onclick="getOperator(`/`)"> /</button>
+        </div>
+        <div>
+            <button type="button" onclick="displayNum(7)"> 7</button>
+            <button type="button" onclick="displayNum(8)"> 8</button>
+            <button type="button" onclick="displayNum(9)"> 9</button>
+            <button type="button" onclick="getOperator(`*`)"> *</button>
+        </div>
+        <div>
+            <button type="button" onclick="displayNum(4)"> 4</button>
+            <button type="button" onclick="displayNum(5)"> 5</button>
+            <button type="button" onclick="displayNum(6)"> 6</button>
+            <button type="button" onclick="getOperator(`-`)"> -</button>
+        </div>
+        <div>
+            <button type="button" onclick="displayNum(20)"> 1</button>
+            <button type="button" onclick="displayNum(2)"> 2</button>
+            <button type="button" onclick="displayNum(4)"> 3</button>
+            <button type="button" onclick="getOperator(`sam`)"> +</button>
+        </div>
+        <div>
+            <button type="button" onclick="displayNum(0o0)"> 00</button>
+            <button type="button" onclick="displayNum(0)"> 0</button>
+            <button id="sas" type="button" onclick="calculate()"> =</button>
+        </div>
+    </div>
+</div>
+    </body>
+<script>
+    let ods = document.getElementById("ods");
+    function displayNum(a) {
+    ods.value =""
+    ods.value +=a;
+}
+function getOperator(opt) {
+operator = opt;
+firstnumber = ods.value;
+ods.value = "";
+
+
+}
+
+let firstnumber = "";
+let secondnumber = "";
+let operator = "";
+function calculate() {
+secondnumber = ods.value;
+if (operator === "sam") {
+ods.value = Number(firstnumber) + Number(secondnumber);
+} else if (operator === "-") {
+ods.value = Number(firstnumber) - Number(secondnumber);
+} else if (operator === "*") {
+ods.value = Number(firstnumber) * Number(secondnumber);
+} else if (operator === "/") {
+ods.value = Number(firstnumber) / Number(secondnumber);
+} else if (operator === "%") {
+ods.value = Number(firstnumber) % Number(secondnumber);
+} else if (operator === "^") {
+ods.value = Math.pow(Number(firstnumber),Number(secondnumber));
+}
+}
+  
+  
+</script>
